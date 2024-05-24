@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'pages/home_page.dart';
+import 'pages/hotel_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,6 +13,14 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/',
         builder: (context, state) => HomePage(),
+      ),
+      GoRoute(
+        path: '/:pseudo',
+        builder: (context, state) {
+          final pseudo = state.pathParameters[
+              'pseudo']!; // Utilisez pathParameters au lieu de params
+          return HotelPage(pseudo: pseudo);
+        },
       ),
     ],
   );

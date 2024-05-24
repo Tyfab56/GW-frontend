@@ -78983,7 +78983,7 @@ this.xv()},
 xv(){var s=0,r=A.R(t.z),q=this,p
 var $async$xv=A.S(function(a,b){if(a===1)return A.O(b,r)
 while(true)switch(s){case 0:s=2
-return A.U(A.aGs(A.d9("https://api.guest-welcome.com/api/hotels/"+q.a.c)),$async$xv)
+return A.U(A.aGs(A.d9("https://api.guest-welcome.com/api/apihotelsmain/"+q.a.c)),$async$xv)
 case 2:p=b
 if(p.b===200)q.aq(new A.acK(q,p))
 else q.aq(new A.acL(q))

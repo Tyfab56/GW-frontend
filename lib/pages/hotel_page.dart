@@ -5,7 +5,7 @@ import 'dart:convert';
 class HotelPage extends StatefulWidget {
   final String pseudo;
 
-  const HotelPage({required this.pseudo});
+  HotelPage({required this.pseudo});
 
   @override
   _HotelPageState createState() => _HotelPageState();
@@ -23,7 +23,7 @@ class _HotelPageState extends State<HotelPage> {
 
   fetchHotelData() async {
     final response = await http.get(Uri.parse(
-        'https://api.guest-welcome.com/api/apihotelsmain/${widget.pseudo}'));
+        'https://api.guest-welcome.com/api/apihotels/${widget.pseudo}'));
 
     if (response.statusCode == 200) {
       setState(() {
@@ -42,20 +42,20 @@ class _HotelPageState extends State<HotelPage> {
   Widget build(BuildContext context) {
     if (isLoading) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Loading...')),
+        appBar: AppBar(title: Text('Loading...')),
         body: Center(child: CircularProgressIndicator()),
       );
     }
 
     if (hotelData == null) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Hotel not found')),
+        appBar: AppBar(title: Text('Hotel not found')),
         body: Center(child: Text('Hotel not found')),
       );
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text(hotelData!['hotel']['title'])),
+      appBar: AppBar(title: Text(hotelData!['hotel']['name'])),
       body: ListView(
         children: [
           Text('Languages:'),

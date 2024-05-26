@@ -22,8 +22,8 @@ class _HotelPageState extends State<HotelPage> {
   }
 
   fetchHotelData() async {
-    final response = await http.get(Uri.parse(
-        'https://api.guest-welcome.com/api/apihotels/${widget.pseudo}'));
+    final response = await http.get(
+        Uri.parse('https://api.guest-welcome.com/api/hotel/${widget.pseudo}'));
 
     if (response.statusCode == 200) {
       setState(() {

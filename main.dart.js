@@ -79119,7 +79119,7 @@ this.xz()},
 xz(){var s=0,r=A.O(t.z),q=this,p
 var $async$xz=A.P(function(a,b){if(a===1)return A.L(b,r)
 while(true)switch(s){case 0:s=2
-return A.V(A.aGU(A.cY("https://api.guest-welcome.com/api/apihotels/"+q.a.c)),$async$xz)
+return A.V(A.aGU(A.cY("https://api.guest-welcome.com/api/hotel/"+q.a.c)),$async$xz)
 case 2:p=b
 if(p.b===200)q.aw(new A.ad_(q,p))
 else q.aw(new A.ad0(q))
